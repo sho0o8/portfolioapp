@@ -2,12 +2,13 @@
 
 <!-- Styles -->
 @section('stylesheet')
-  <link rel="stylesheet" href="{{ asset('css/job_main.css')}}">
+  <link rel="stylesheet" href="{{ asset('css/portfolio.css')}}">
 @endsection
 
 @section('title','main')
 
 @section('content')
+<div class="job_content">
   <div class="job_gallery">
     <img src="{{ asset('images/img1.jpg')}}" alt="">
   </div>
@@ -37,4 +38,5 @@
     <a href="" class="btn btn-orange btn-radius">詳細</a>
     <a href="" class="btn btn-orange btn-radius">応募する</a>
   </div>
+</div>
   @endsection

@@ -1,0 +1,209 @@
+/* 共通部分 */
+@charset "utf-8";
+/* 全体 */
+body {
+  background-color: #fff;
+  color: #636b6f;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* ヘッダー */
+header{
+  padding: 10px 4% 10px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 90px;
+  background-color:#f3f4f4;
+  display: flex;
+  align-items: center;
+}
+
+.header_left img{
+  width: 110px;
+}
+
+a{
+  text-decoration: none;
+  color: #636b6f;
+}
+
+nav{
+  margin: 0 0 0 auto;
+}
+
+ul{
+  list-style: none;
+  margin: 0;
+  display: flex;
+}
+
+li{
+  margin: 0 0 0 15px;
+  font-size: 14px;
+}
+
+/* フッター */
+footer {
+  background-color: #f3f4f4;
+  height: 70px;
+  color: #636b6f;
+  text-align: center;
+}
+.copy{
+  padding-top:-10px;
+}
+
+/* トップページ */
+/* コンテンツ */
+.top_page_content {
+  text-align: center;
+  background-image: url(../images/top_photo.jpg);
+  background-size:cover;
+  width: 100%;
+  height: 1200px;
+  padding: 200px 0 0px 0;
+}
+
+.top_page_content h1{
+  color: #f3f4f4;
+  font-size: 80px;
+  text-shadow: 10px 10px 0 #636b6f;
+  padding-bottom: 50px;
+}
+.top-right {
+  position: absolute;
+  right: 10px;
+  top: 18px;
+}
+
+.btn_signup {
+  background-color:#f3f4f4;
+}
+
+.btn_login {
+  background-color:#f3f4f4;
+}
+
+.btn_signup, .btn_login {
+  padding: 5px 24px;
+  color: white;
+  opacity: 0.8;
+  border-radius: 4px;
+}
+
+.btn_signup:hover {
+  opacity:1;
+}
+.btn_login:hover {
+  opacity:1;
+}
+
+.links a {
+    color: #636b6f;
+    padding: 15px 25px;
+    margin: 0 15px;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+}
+
+/* サービスについて */
+/* コンテンツ */
+.about_content {
+  text-align: center;
+  width: 100%;
+  height: 1200px;
+  padding: 200px 0 100px 0;
+}
+.about_photo img{
+  width: 700px;
+  box-shadow: 20px 20px 0 #f3f4f4;
+}
+.about_sentence{
+  display: inline-block;
+  padding: 0.5em 4em;
+  margin: 2em 0;
+  font-weight: bold;
+  background: #FFF;
+  border: solid 3px #f3f4f4;
+  border-radius: 10px;
+}
+.about_sentence h2{
+  font-size: 40px;
+  line-height: 5px;
+}
+.about_sentence h4{
+  line-height: 5px;
+}
+/* お問い合せについて */
+/* 入力フォーム */
+/* コンテンツ */
+.contact_content{
+  height: 1200px;
+  padding-top:200px ;
+}
+.contact_content .contact_form{
+  text-align: center;
+}
+
+/* 確認フォーム */
+/* コンテンツ */
+.confirm_content{
+  height: 1200px;
+  padding-top:200px ;
+}
+.confirm_content .contact_form{
+  text-align: center;
+}
+
+/* 求職者側ページ */
+.job_content{
+  width: 100%;
+  height: 1200px;
+  padding: 200px 0 100px 0;
+  font-weight: bold;
+  background: #FFF;
+  border: solid 3px #f3f4f4;
+  border-radius: 10px
+}
+.job_gallery{
+  text-align: center;
+}
+
+.job_gallery img{
+  max-width: 600px;
+}
+.job_preview{
+  text-align: center;
+  font-size: 20px;
+}
+.table_02{
+  text-align: center;
+}
+.th_02{
+  text-align: right;
+}
+.links{
+  text-align: center;
+}
+.btn-orange,a.btn-orange {
+  color: #fff;
+  background-color: #eb6100;
+}
+.btn-orange:hover,a.btn-orange:hover {
+  color: #fff;
+  background: #f56500;
+}
+
+a.btn-radius {
+  border-radius: 100vh;
+}

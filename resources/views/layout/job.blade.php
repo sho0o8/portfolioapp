@@ -22,9 +22,7 @@
         </ul>
       </nav>
     </header>
-    <div class="content">
-      @yield('content')
-    </div>
+    @yield('content')
     <footer>
       <div class="snss">
         <span class="fa fa-instagram fa-2x"><a href="#"></a></span>
