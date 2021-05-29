@@ -20,7 +20,7 @@
         <input type="text" name="email" value="{{old('email')}}">
         <br>
         @if($errors->has('email'))
-        <p class="error-message">{{$errors->first('emial')}}</p>
+        <p class="error-message">{{$errors->first('email')}}</p>
         @endif
         <label>■お問い合わせ内容</label>
         <textarea name="body">

@@ -1,6 +1,13 @@
 <?php
 Route::get('/','IndexController@top_page');
+Route::post('/','IndexController@top_page');
 Route::get('/about','IndexController@about');
 Route::get('/contact','IndexController@contact');
 Route::post('/contact/confirm','IndexController@confirm');
+Route::post('/contact/confirm/send','IndexController@send');
 Route::get('/mypage','IndexController@job_main');
+Route::post('/mypage','IndexController@job_main');
+Route::get('/logout','IndexController@logout');
+Route::get('/apply','IndexController@job_apply');
+Route::post('/apply/confirm','IndexController@apply_confirm');
+Route::post('/apply/confirm/thanks','IndexController@apply_thanks');

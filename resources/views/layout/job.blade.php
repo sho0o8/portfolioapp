@@ -16,8 +16,8 @@
       </div>
       <nav class="pc_nav">
         <ul>
-          <li><a href="#">マイページ</a></li>
-          <li><a href="#">ログアウト</a></li>
+          <li><a href="profile">プロフィール</a></li>
+          <li><a href="logout">ログアウト</a></li>
           <li><a href="contact">お問い合わせ</a></li>
         </ul>
       </nav>

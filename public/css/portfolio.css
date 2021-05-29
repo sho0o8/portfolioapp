@@ -53,6 +53,9 @@ li{
 
 /* フッター */
 footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   background-color: #f3f4f4;
   height: 70px;
   color: #636b6f;
@@ -165,14 +168,24 @@ footer {
   text-align: center;
 }
 
+/* 送信完了画面 */
+.send_content{
+  padding: 200px 0;
+  text-align: center;
+}
+.send_title{
+  padding: 100px 0;
+}
+
 /* 求職者側ページ */
 .job_content{
-  width: 100%;
+  width: 50%;
+  margin: 0 auto;
   height: 1200px;
-  padding: 200px 0 100px 0;
+  padding: 200px 0 0 0;
   font-weight: bold;
   background: #FFF;
-  border: solid 3px #f3f4f4;
+  border: solid 3px blue;
   border-radius: 10px
 }
 .job_gallery{
@@ -192,8 +205,9 @@ footer {
 .th_02{
   text-align: right;
 }
-.links{
+.job_links{
   text-align: center;
+  font-size: 20px;
 }
 .btn-orange,a.btn-orange {
   color: #fff;
@@ -203,7 +217,90 @@ footer {
   color: #fff;
   background: #f56500;
 }
-
 a.btn-radius {
   border-radius: 100vh;
+}
+/* ポップアップ */
+.modal_wrap input{
+  display: none;
+}
+
+.modal_overlay{
+  display: flex;
+  justify-content: center;
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  transition: opacity 0.5s, transform 0s 0.5s;
+  transform: scale(0);
+}
+
+.modal_content{
+  align-self: center;
+  width: 70%;
+  max-width: 800px;
+  height: 900px;
+  padding: 30px 30px 15px;
+  box-sizing: border-box;
+  background: #fff;
+  border:solid 3px blue;
+  transform: scale(0.3);
+  transition: 0.5s;
+}
+
+.close_button{
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.modal_wrap input:checked ~ .modal_overlay{
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.5s;
+}
+
+.modal_wrap input:checked ~ .modal_overlay .modal_content{
+  transform: scale(1);
+}
+.open_button{
+  border-radius: 100vh;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+/* ログアウト */
+.logout_content{
+  padding: 200px 0;
+  text-align: center;
+}
+.logout_title{
+  padding: 100px 0;
+}
+/* 応募フォーム */
+.apply_content{
+  height: 1200px;
+  padding-top:200px ;
+}
+.apply_form{
+  text-align: center;
+}
+.btn_terms{
+  text-decoration:underline;
+  cursor: pointer;
+}
+/* 応募完了画面 */
+.thanks_content{
+  padding: 200px 0;
+  text-align: center;
+}
+.thanks_title{
+  padding: 100px 0;
 }
