@@ -1,10 +1,5 @@
 @extends('layout.job')
 
-<!-- Styles -->
-@section('stylesheet')
-  <link rel="stylesheet" href="{{ asset('css/portfolio.css')}}">
-@endsection
-
 @section('title','logout')
 
 @section('content')

@@ -1,9 +1,5 @@
 @extends('layout.index')
 
-@section('stylesheet')
-  <link rel="stylesheet" href="{{ asset('css/portfolio.css')}}">
-@endsection
-
 @section('title','confirm')
 
 @section('content')

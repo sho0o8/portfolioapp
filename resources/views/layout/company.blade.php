@@ -12,13 +12,13 @@
   <body>
     <header>
       <div class="header_left">
-        <img src="{{asset('/images/logo_transparent.png')}}" alt="ロゴ">
+        <a href="/"><img src="{{asset('/images/logo_transparent.png')}}" alt="ロゴ"></a>
       </div>
       <nav class="pc_nav">
         <ul>
-          <li><a href="/mypage/profile">プロフィール</a></li>
-          <li><a href="logout">ログアウト</a></li>
-          <li><a href="contact">お問い合わせ</a></li>
+          <li><a href="about">サービスについて</a></li>
+          <li><a href="#">求職者の方はこちら</a></li>
+          <li><a href="contact">お問い合せ</a></li>
         </ul>
       </nav>
     </header>

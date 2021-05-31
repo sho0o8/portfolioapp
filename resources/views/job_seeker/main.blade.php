@@ -1,23 +1,8 @@
 @extends('layout.job')
 
-<!-- Styles -->
-@section('stylesheet')
-  <link rel="stylesheet" href="{{ asset('css/portfolio.css')}}">
-@endsection
-
 @section('title','main')
 
 @section('content')
-<div class="modal_wrap">
-  <input id="trigger" type="checkbox">
-  <div class="modal_overlay">
-    <div class="modal_content">
-      <label for="trigger" class="close_button">✖️</label>
-      <h2>求人情報詳細</h2>
-      <p>○○○○○○○○○○○○○○○<br> ○○○○○○○○○○○○○○○○○</p>
-    </div>
-  </div>
-</div>
 <div class="job_content">
   <div class="job_gallery">
     <img src="{{ asset('images/img1.jpg')}}" alt="">
@@ -45,7 +30,19 @@
   <div class="job_links">
     <a href="" class="btn-orange btn-radius">興味あり</a>
     <a href="" class="btn-orange btn-radius">興味なし</a>
-    <label for="trigger" class="btn-orange btn-radius open_button">詳細</label>
+<!-- 詳細 -->
+    <a href="#detail_modal" class="btn-orange btn-radius open_button">詳細</a>
+<!-- ポップアップ -->
+            <div class="modal_wrapper" id="detail_modal">
+                <a href="#!" class="modal_overlay"></a>
+                <div class="modal_window">
+                    <div class="detail_content">
+                        <h4>求人情報の詳細</h4>
+                    </div>
+                    <a href="#" class="modal_close">✖️</a>
+                </div>
+            </div>
+
     <a href="/apply" class="btn-orange btn-radius">応募する</a>
   </div>
 </div>

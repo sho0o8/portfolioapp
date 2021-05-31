@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 class IndexController extends Controller
 {
     // トップページ
+    // トップ
     public function top_page(){
         return view ('top_page');
     }
@@ -31,10 +32,26 @@ class IndexController extends Controller
         $inputs = $request->all();
         return view('contact.confirm',['inputs' => $inputs,]);
     }
-    // 送信フォーム
+    // 送信完了
     public function send(Request $request)
     {
         return view('contact.send');
+    }
+    // 企業側
+    // ログイン＆新規ページ
+    public function company_login(){
+        return view('company.login');
+    }
+    public function company_condition(){
+        return view('company.condition');
+    }
+    // マイページ
+    public function company_mypage(){
+        return view('company.mypage');
+    }
+    // 求人変更ページ
+    public function company_change(){
+        return view('company.change');
     }
     // 求職者側
     // マイページ
@@ -65,8 +82,16 @@ class IndexController extends Controller
         $inputs = $request->all();
         return view('job_seeker.confirm',['inputs' => $inputs,]);
     }
+    // 応募完了画面
     public function apply_thanks()
     {
         return view('job_seeker.thanks');
+    }
+    // プロフィール画面
+    public function job_profile(){
+        return view('job_seeker.profile');
+    }
+    public function job_change(){
+        return view('job_seeker.change');
     }
 }
