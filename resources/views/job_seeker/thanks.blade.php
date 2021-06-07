@@ -9,7 +9,8 @@
     <h3>応募先より連絡がありますのでお待ちください。</h3>
   </div>
   <form method="post" action="/mypage" >
-    <button type="submit" >TOPページへ戻る</button>
+  @csrf
+    <input type="submit" class="btn_submit" value="TOPページへ戻る">
   </form>
 </div>
   @endsection

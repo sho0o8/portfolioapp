@@ -9,7 +9,8 @@
     <h3>担当より連絡がありますのでお待ちください。</h3>
   </div>
   <form method="post" action="/" >
-    <button type="submit" >TOPページへ戻る</button>
+    @csrf
+    <input type="submit" class="btn_submit btn_send" value="TOPページへ戻る" >
   </form>
 </div>
   @endsection

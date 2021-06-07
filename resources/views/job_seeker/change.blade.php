@@ -8,7 +8,8 @@
     <h1>プロフィール変更画面</h1>
   </div>
   <div class="change">
-    <form method="post" action="">
+    <form method="post" action="/mypage">
+    @csrf
       <table class="personal_change">
         <tr>
           <th>名前</th>
@@ -24,11 +25,11 @@
         </tr>
         <tr>
           <th>電話番号</th>
-          <td><input type="text" name="tell" value="{{old('tell')}}"></td>
+          <td><input type="tel" name="tell" value="{{old('tell')}}"></td>
         </tr>
         <tr>
           <th>E-mail</th>
-          <td><input type="text" name="mail" value="{{old('mail')}}"></td>
+          <td><input type="email" name="mail" value="{{old('mail')}}"></td>
         </tr>
         <tr>
           <th>年齢</th>
@@ -63,7 +64,7 @@
           <td><input type="text" name="feature" value="{{old('feature')}}"></td>
         </tr>
       </table>
-      <input type="submit" value="完了">
+      <input type="submit" class="btn_submit" value="完了">
     </form>
   </div>
 </div>

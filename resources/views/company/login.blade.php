@@ -5,29 +5,36 @@
 @section('content')
 <div class="company_content">
   <div class="company_login">
-    <h4>ログインフォーム</h4>
-    <form method="post" action="#">
-      <label>E-mail：</label>
-      <input type="text" name="user">
-      <br>
-      <label>PASS：</label>
-      <input type="pass" name="pass">
-      <br>
-      <input type="submit" value="ログイン">
+    <h1>ログインフォーム</h1>
+    <form method="post" action="/login/company_mypage">
+    @csrf
+      <div class="company_login_form">
+        <p class="company_login_items_label">E-mail：</p>
+        <input type="email" class="company_login_items_input" name="user">
+      </div>
+      <div class="company_login_form">
+        <p class="company_login_items_label">PASS：</p>
+        <input type="password" class="company_login_items_input" name="pass">
+      </div>
+      <div class="login_btn">
+        <input type="submit" class="btn_submit" value="新規登録">
+      </div>
     </form>
   <!-- ログイン出来ない -->
-    <a href="#company_not_login_modal">ログインができない方はこちら</a>
+      <a href="#company_not_login_modal" class="company_not_login">ログインができない方はこちら</a>
   <!-- ポップアップ -->
     <div class="modal_wrapper" id="company_not_login_modal">
       <a href="#!" class="modal_overlay"></a>
       <div class="modal_window">
         <div class="company_not_login_content">
           <h4>ログイン出来ない方</h4>
-          <form method="post" action="#">
-            <label>登録E-mail</label>
-            <input type="mail" name="mail">
-            <br>
-            <input type="submit" name="send" value="送信">
+          <form method="post" action="/login/company_mypage">
+          @csrf
+          <div class="company_login_form">
+            <p class="company_login_items_label">登録E-mail：</p>
+            <input type="email" class="company_login_items_input" name="user">
+          </div>
+            <input type="submit" class="btn_submit" name="send" value="送信">
           </form>
         </div>
         <a href="#" class="modal_close">✖️</a>
@@ -36,27 +43,34 @@
   </div>
   <!-- 新規登録フォーム -->
   <div class="company_register">
-    <a href="#company_register_modal" class="company_register_title" >新規登録の方</a>
+    <a href="#company_register_modal" class="company_register_title" >新規登録の方はこちら</a>
   <!-- ポップアップ -->
     <div class="modal_wrapper" id="company_register_modal">
       <a href="#!" class="modal_overlay"></a>
       <div class="modal_window">
         <div class="company_register_content">
           <h4>新規登録フォーム</h4>
-          <form method="post" action="login#company_register_modal/job_condition">
-            <label>企業名：</label>
-            <input type="text" name="user">
-            <br>
-            <label>E-mail：</label>
-            <input type="mail" name="mail">
-            <br>
-            <label>PASS：</label>
-            <input type="pass" name="pass">
-            <br>
-            <label>PASS（確認）：</label>
-            <input type="pass" name="repass">
-            <br>
-            <input type="submit" value="作成">
+          <form method="post" action="login/job_condition">
+          @csrf
+            <div class="company_register_form">
+              <p class="company_register_items_label">企業名：</p>
+              <input type="text" class="company_register_items_input" name="user">
+            </div>
+            <div class="company_register_form">
+              <p class="company_register_items_label">E-mail：</p>
+              <input type="email" class="company_register_items_input" name="mail">
+            </div>
+            <div class="company_register_form">
+              <p class="company_register_items_label">PASS：</p>
+              <input type="password" class="company_register_items_input" name="pass">
+            </div>
+            <div class="company_register_form">
+              <p class="company_register_items_label">PASS(確認)：</p>
+              <input type="password" class="company_register_items_input" name="pass">
+            </div>
+            <div class="company_register_btn">
+                  <input type="submit" class="btn_submit" value="新規登録">
+            </div>
           </form>
         </div>
         <a href="#" class="modal_close">✖️</a>

@@ -5,33 +5,37 @@
 @section('content')
 <div class="job_content">
   <div class="job_gallery">
-    <img src="{{ asset('images/img1.jpg')}}" alt="">
+    <img src="{{ asset('images/img5.jpg')}}" alt="">
   </div>
   <div class="job_preview">
     <table class="table_02" align="center">
       <tr class="tr_02">
-        <th class="th_02">企業（職種）：</th>
+        <th class="th_02">■企業名</th>
         <td class="td_02">〇〇○○</td>
       </tr>
       <tr class="tr_02">
-        <th class="th_02">勤務地：</th>
+        <th class="th_02">■雇用形態</th>
         <td class="td_02">〇〇○○</td>
       </tr>
       <tr class="tr_02">
-        <th class="th_02">時給：</th>
+        <th class="th_02">■職種</th>
+        <td class="td_02">〇〇○○</td>
+      </tr>
+      <tr class="tr_02">
+        <th class="th_02">■勤務地</th>
+        <td class="td_02">〇〇○○</td>
+      </tr>
+      <tr class="tr_02">
+        <th class="th_02">■給与</th>
         <td class="td_02">○○○円</td>
-      </tr>
-      <tr class="tr_02">
-        <th class="th_02">仕事の特徴：</th>
-        <td class="td_02">○○○、○○○</td>
       </tr>
     </table>
   </div>
   <div class="job_links">
-    <a href="" class="btn-orange btn-radius">興味あり</a>
-    <a href="" class="btn-orange btn-radius">興味なし</a>
+    <a href="" class="btn_job_links">興味あり</a>
+    <a href="" class="btn_job_links">興味なし</a>
 <!-- 詳細 -->
-    <a href="#detail_modal" class="btn-orange btn-radius open_button">詳細</a>
+    <a href="#detail_modal" class="btn_job_links open_button">詳細</a>
 <!-- ポップアップ -->
             <div class="modal_wrapper" id="detail_modal">
                 <a href="#!" class="modal_overlay"></a>
@@ -42,8 +46,7 @@
                     <a href="#" class="modal_close">✖️</a>
                 </div>
             </div>
-
-    <a href="/apply" class="btn-orange btn-radius">応募する</a>
+    <a href="/apply" class="btn_job_links">応募する</a>
   </div>
 </div>
   @endsection

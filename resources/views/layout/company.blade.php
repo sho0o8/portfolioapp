@@ -15,10 +15,10 @@
         <a href="/"><img src="{{asset('/images/logo_transparent.png')}}" alt="ロゴ"></a>
       </div>
       <nav class="pc_nav">
-        <ul>
-          <li><a href="about">サービスについて</a></li>
-          <li><a href="#">求職者の方はこちら</a></li>
-          <li><a href="contact">お問い合せ</a></li>
+        <ul class="pc_nav_ul">
+          <li class="nav_list"><a href="/about">サービスについて</a></li>
+          <li class="nav_list"><a href="/">求職者の方はこちら</a></li>
+          <li class="nav_list"><a href="/contact">お問い合せ</a></li>
         </ul>
       </nav>
     </header>

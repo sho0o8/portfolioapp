@@ -9,15 +9,19 @@
   </div>
   <div class="company_mypage_content">
     <div class="company_mypage_create">
-      <h3>求人作成</h3>
-      <a href="/login/job_condition">新規作成</a>
+      <div class="company_mypage_subtitle">
+        <h2>求人作成</h2>
+      </div>
+      <a class="company_job_list" href="/login/job_condition">新規作成</a>
     </div>
     <div class="company_mypage_list">
-      <h3>求人一覧</h3>
-      <ul>
-        <li><a href="/company_mypage/change"> 求人①</a></li>
-        <li><a href="/company_mypage/change"> 求人②</a></li>
-        <li><a href="/company_mypage/change"> 求人③</a></li>
+      <div class="company_mypage_subtitle">
+        <h2>求人一覧</h2>
+      </div>
+      <ul class="company_mypage_ul">
+        <li><a class="company_job_list" href="/company_mypage/change"> 求人①</a></li>
+        <li><a class="company_job_list" href="/company_mypage/change"> 求人②</a></li>
+        <li><a class="company_job_list" href="/company_mypage/change"> 求人③</a></li>
       </ul>
     </div>
   </div>

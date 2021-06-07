@@ -4,24 +4,27 @@
 
 @section('content')
 <div class="confirm_content">
-  <div class="contact_form">
-    <form method='post' action="/contact/confirm/send">
-      @csrf
-      <label>■名前</label>
+  <form method='post' action="/contact/confirm/send">
+  @csrf
+    <div class="contact_form">
+      <p class="form_items_label">■名前</p>
       {{ $inputs['name'] }}
-      <input name="name" value="{{ $inputs['name'] }}" type="hidden">
-      <br>
-      <label>■メールアドレス</label>
+      <input name="name" class="form_items_input" value="{{$inputs['name'] }}"type="hidden">
+    </div>
+    <div class="contact_form">
+      <p class="form_items_label">■メールアドレス</p>
       {{ $inputs['email'] }}
-      <input name="email" value="{{ $inputs['email'] }}" type="hidden">
-      <br>
-      <label>■お問い合わせ内容</label>
+      <input name="email" class="form_items_input" value="{{$inputs['email'] }}"type="hidden">
+    </div>
+    <div class="contact_form">
+      <p class="form_items_label ismsg">■お問い合わせ内容</p>
       {{$inputs['body']}}
-      <input name="body" value="{{ $inputs['body'] }}" type="hidden">
-      <br>
-      <button type="submit" name="action" value="back">入力内容修正</button>
-      <button type="submit" name="action" value="submit">送信する</button>
-    </form>
-  </div>
-  </div>
+      <input name="body" class="form_items_textarea" value="{{$inputs['body'] }}"type="hidden">
+    </div>
+    <div class="contact_btn">
+      <input type="submit"class="btn_submit" value="入力容修正">
+      <input type="submit"class="btn_submit" value="送信">
+    </div>
+  </form>
+</div>
 @endsection

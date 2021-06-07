@@ -8,54 +8,63 @@
 <!-- リンク -->
         <div class="links">
 <!-- 新規登録フォーム -->
-            <a href="#register_modal" class="btn_signup">新規登録はこちら</a>
+            <a href="#register_modal" class="btn_signup from_left">新規登録はこちら</a>
 <!-- ポップアップ -->
             <div class="modal_wrapper" id="register_modal">
                 <a href="#!" class="modal_overlay"></a>
                 <div class="modal_window">
                     <div class="register_content">
                         <h4>新規登録フォーム</h4>
-                        <form method="post" action="#">
-                            <label>ユーザー名：</label>
-                            <input type="text" name="user">
-                            <br>
-                            <label>E-mail：
-                            </label>
-                            <input type="mail" name="mail">
-                            <br>
-                            <label>PASS：
-                            </label>
-                            <input type="pass" name="pass">
-                            <br>
-                            <label>PASS（確認）：
-                            </label>
-                            <input type="pass" name="repass">
-                            <br>
-                            <input type="submit" value="新規登録">
+                        <form method="post" action="/mypage">
+                        @csrf
+                        <div class="modal_form">
+                            <p class="modal_items_label">ユーザー名：</p>
+                            <input type="text" class="modal_items_input" name="user">
+
+                        </div>
+                        <div class="modal_form">
+                            <p class="modal_items_label">E-mail：</p>
+                            <input type="email" class="modal_items_input" name="mail">
+                        </div>
+                        <div class="modal_form">
+                            <p class="modal_items_label">PASS：</p>
+                            <input type="password" class="modal_items_input" name="pass">
+                        </div>
+                        <div class="modal_form">
+                            <p class="modal_items_label">PASS(確認)：</p>
+                                <input type="password" class="modal_items_input" name="pass">
+                        </div>
+                        <div class="modal_btn">
+                            <input type="submit" class="btn_submit" value="新規登録">
+                        </div>
                         </form>
                     </div>
                     <a href="#" class="modal_close">✖️</a>
                 </div>
             </div>
 <!-- ログインフォーム -->
-            <a href="#login_modal" class="btn_login">ログインはこちら</a>
+            <a href="#login_modal" class="btn_login from_left">ログインはこちら</a>
 <!-- ポップアップ -->
             <div class="modal_wrapper" id="login_modal">
                 <a href="#!" class="modal_overlay"></a>
                 <div class="modal_window">
                     <div class="login_content">
                         <h4>ログインフォーム</h4>
-                        <form method="post" action="#">
-                            <label>ユーザー名：</label>
-                            <input type="text" name="user">
-                            <br>
-                            <label>PASS：
-                            </label>
-                            <input type="pass" name="pass">
-                            <br>
-                            <input type="submit" value="ログイン">
+                        <form method="post" action="/mypage">
+                        @csrf
+                        <div class="modal_form">
+                            <p class="modal_items_label">ユーザー名：</p>
+                            <input type="text" class="modal_items_input" name="user">
+                        </div>
+                        <div class="modal_form">
+                            <p class="modal_items_label">PASS：</p>
+                            <input type="password" class="modal_items_input" name="pass">
+                        </div>
+                        <div class="modal_btn">
+                            <input type="submit" class="btn_submit" value="新規登録">
+                        </div>
                         </form>
-                        <a href="#">ログインができない方はこちら</a>
+                        <a href="#" class="not_login">ログインができない方はこちら</a>
                     </div>
                     <a href="#" class="modal_close">✖️</a>
                 </div>
