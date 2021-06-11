@@ -27,9 +27,10 @@ class JobseekerController extends Controller
         $request->validate([
             'name' => 'required',
             'furigana' => 'required',
+            'birthday' => 'required',
+            'job' => 'required',
             'tell' => 'required | numeric | digits_between:8,11',
-            'email' => 'required|email',
-            'age' => 'required|integer',
+            'mail' => 'required|email',
             'terms' => 'required',
         ]);
         $inputs = $request->all();

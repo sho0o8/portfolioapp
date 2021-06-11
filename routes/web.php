@@ -15,10 +15,10 @@ Route::post('/contact/confirm/send','ToppageController@send');
 // ログイン＆新規ページ
 Route::get('/login','CompanyController@company_login');
 // 追加情報
-Route::get('login/job_condition','CompanyController@company_condition');
-Route::post('login/job_condition','CompanyController@company_condition');
+Route::get('/login/job_condition','CompanyController@company_condition');
+Route::post('/login/job_condition','CompanyController@company_condition');
 // 管理画面ページ
-Route::post('login/company_mypage','CompanyController@company_mypage');
+Route::post('/login/company_mypage','CompanyController@company_mypage');
 // 求人変更ページ
 Route::get('/company_mypage/change','CompanyController@company_change');
 // 求職者ページ

@@ -19,7 +19,13 @@
             </tr>
             <tr>
               <th class="th_info">■都道府県</th>
-              <td class="td_info"><input type="text" name="prefectures" value="{{old('prefectures')}}"></td>
+              <td class="td_info">
+                <select name="prefectures" value="{{old('prefectures')}}">
+                    @foreach (config('const.preflist') as $key => $value)
+                    <option value="{{ $key }}">{{ $value }}</option>
+                    @endforeach
+                </select>
+              </td>
             </tr>
             <tr>
               <th class="th_info">■勤務地</th>
@@ -51,32 +57,31 @@
             </tr>
             <tr>
               <th class="th_info">■職種</th>
-              <td class="td_info"><input type="text" name="job" value="{{old('job')}}"></td>
+              <td class="td_info">
+                <select name="job" value="{{old('job')}}">
+                    @foreach (config('const.job_type') as $key => $value)
+                      <option value="{{ $key }}">{{ $value }}</option>
+                    @endforeach
+                </select>
+              </td>
             </tr>
             <tr>
               <th class="th_info">■雇用形態</th>
               <td class="td_info">
                 <select name="status" value="{{old('status')}}">
-                  <option value="" selected="selected">選択してください</option>
-                  <option value="アルバイト">アルバイト</option>
-                  <option value="正社員">正社員</option>
-                  <option value="契約社員">契約社員</option>
-                  <option value="派遣">派遣</option>
-                  <option value="業務委託">業務委託</option>
-                </select>
+                    @foreach (config('const.working_status') as $key => $value)
+                    <option value="{{ $key }}">{{ $value }}</option>
+                    @endforeach
               </td>
             </tr>
             <tr>
               <th class="th_info">■給与</th>
-              <td class="td_info">
-                <select name="salary_system" value="{{old('salary_system')}}">
-                  <option value="" selected="selected">選択してください</option>
-                  <option value="時給">時給</option>
-                  <option value="日給">日給</option>
-                  <option value="月給">月給</option>
-                  <option value="年俸">年俸</option>
-                  <option value="完全出来高">完全出来高</option>
-                </select>
+                <td class="td_info">
+                  <select name="salary_system" value="{{old('salary_system')}}">
+                    @foreach (config('const.salary_form') as $key => $value)
+                    <option value="{{ $key }}">{{ $value }}</option>
+                    @endforeach
+                  </select>
                 <input type="text" name="salary" value="{{old('salary')}}">
               </td>
             </tr>

@@ -61,7 +61,7 @@
                             <input type="password" class="modal_items_input" name="pass">
                         </div>
                         <div class="modal_btn">
-                            <input type="submit" class="btn_submit" value="新規登録">
+                            <input type="submit" class="btn_submit" value="ログイン">
                         </div>
                         </form>
                         <a href="#" class="not_login">ログインができない方はこちら</a>

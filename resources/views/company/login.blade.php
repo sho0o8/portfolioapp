@@ -17,7 +17,7 @@
         <input type="password" class="company_login_items_input" name="pass">
       </div>
       <div class="login_btn">
-        <input type="submit" class="btn_submit" value="新規登録">
+        <input type="submit" class="btn_submit" value="ログイン">
       </div>
     </form>
   <!-- ログイン出来ない -->
@@ -30,11 +30,11 @@
           <h4>ログイン出来ない方</h4>
           <form method="post" action="/login/company_mypage">
           @csrf
-          <div class="company_login_form">
-            <p class="company_login_items_label">登録E-mail：</p>
-            <input type="email" class="company_login_items_input" name="user">
-          </div>
-            <input type="submit" class="btn_submit" name="send" value="送信">
+            <div class="company_login_form">
+              <p class="company_login_items_label">登録E-mail：</p>
+              <input type="email" class="company_login_items_input" name="user">
+            </div>
+              <input type="submit" class="btn_submit" name="send" value="送信">
           </form>
         </div>
         <a href="#" class="modal_close">✖️</a>

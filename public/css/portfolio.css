@@ -6,15 +6,13 @@ body {
   color: #636b6f;
   font-family: 'Nunito', sans-serif;
   font-weight: 700;
-  /* height: 100vh; */
   margin: 0;
   padding: 0;
+  position: relative;
 }
-
 * {
   box-sizing: border-box;
 }
-
 /* ヘッダー */
 header{
   padding: 10px 4% 10px;
@@ -52,20 +50,6 @@ ul{
   font-size: 14px;
 }
 
-/* フッター */
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background-color: #f3f4f4;
-  height: 70px;
-  color: #636b6f;
-  text-align: center;
-}
-.copy{
-  padding-top:-10px;
-}
-
 /* トップページ */
 /* コンテンツ */
 /* ポップアップ */
@@ -100,7 +84,7 @@ footer {
   position: relative;
   width: 70%;
   max-width: 600px;
-  padding: 30px 30px 15px;
+  padding: 30px 30px 30px;
   border-radius: 10px;
   background: #dfe4ee;
   box-shadow: 0 0 30px rgba(0,0,0,.6);
@@ -185,6 +169,9 @@ a.not_login{
 }
 .login_content .form_items{
   text-align: right;
+}
+.login_content{
+  padding-bottom: 30px;
 }
 /* コンテンツレイアウト */
 .top_page_content {
@@ -616,4 +603,17 @@ a.company_not_login, a.company_register_title{
 }
 .personal_change{
   margin-bottom: 20px;
+}
+/* フッター */
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #f3f4f4;
+  color: #636b6f;
+  text-align: center;
+  padding-top: 30px;
+}
+.copy{
+  padding-top:-10px;
 }
