@@ -3,69 +3,99 @@
 @section('title','change')
 
 @section('content')
-<div class="profile_change">
-  <div class="change_title">
+<div class="profile_content">
+  <div class="profile_title">
     <h1>プロフィール変更画面</h1>
   </div>
-  <div class="change">
-    <form method="post" action="/mypage">
-    @csrf
-      <table class="personal_change">
+  <form method="post" action="/mypage">
+  @csrf
+    <div class="profile">
+      <table class="profile_info">
         <tr>
-          <th>名前</th>
-          <td><input type="text" name="name" value="{{old('name')}}"></td>
+          <th class="th_info">■氏名</th>
+          <td class="td_info">
+            {{ $inputs['name'] }}
+            <input name="name" class="form_items_input" value="{{$inputs['name'] }}"type="hidden">
+          </td>
         </tr>
         <tr>
-          <th>フリガナ</th>
-          <td><input type="text" name="furigana" value="{{old('furigana')}}"></td>
+          <th class="th_info">■フリガナ</th>
+          <td class="td_info">
+          {{ $inputs['furigana'] }}
+          <input name="furigana" class="form_items_input" value="{{$inputs['furigana'] }}"type="hidden">
+          </td>
         </tr>
         <tr>
-          <th>ユーザー名</th>
-          <td><input type="text" name="user" value="{{old('user')}}"></td>
+          <th class="th_info">■ユーザー名</th>
+          <td class="td_info">
+          {{ $inputs['user'] }}
+          <input name="user" class="form_items_input" value="{{$inputs['user'] }}"type="hidden">
+          </td>
         </tr>
         <tr>
-          <th>電話番号</th>
-          <td><input type="tel" name="tell" value="{{old('tell')}}"></td>
+          <th class="th_info">■電話番号</th>
+          <td class="td_info">
+          {{ $inputs['tel'] }}
+          <input name="tel" class="form_items_input" value="{{$inputs['tel'] }}"type="hidden">
+          </td>
         </tr>
         <tr>
-          <th>E-mail</th>
-          <td><input type="email" name="mail" value="{{old('mail')}}"></td>
+          <th class="th_info">■E-mail</th>
+          <td class="td_info">
+          {{ $inputs['mail'] }}
+          <input name="mail" class="form_items_input" value="{{$inputs['mail'] }}"type="hidden">
+          </td>
         </tr>
         <tr>
-          <th>年齢</th>
-          <td><input type="text" name="age" value="{{old('age')}}"></td>
+          <th class="th_info">■都道府県</th>
+          <td class="td_info">
+          <input name="prefectures" class="form_items_input" value="{{$inputs['prefectures'] }}"type="hidden">
+          </td>
         </tr>
         <tr>
-          <th>都道府県</th>
-          <td><input type="text" name="prefectures" value="{{old('prefectures')}}"></td>
+          <th class="th_info">■最寄り駅</th>
+          <td class="td_info">
+          {{ $inputs['closest_station'] }}
+          <input name="closest_station" class="form_items_input" value="{{$inputs['closest_station'] }}"type="hidden">
+          </td>
         </tr>
         <tr>
-          <th>最寄り駅</th>
-          <td><input type="text" name="prefectures" value="{{old('prefectures')}}"></td>
-        </tr>
-        <tr>
-          <th>都道府県</th>
-          <td><input type="text" name="closest_station" value="{{old('closest_station')}}"></td>
-        </tr>
-        <tr>
-          <th>希望勤務時間</th>
-          <td><input type="text" name="working_times" value="{{old('working_times')}}"></td>
-        </tr>
-        <tr>
-          <th>希望時間帯</th>
-          <td><input type="text" name="time_period" value="{{old('time_period')}}"></td>
-        </tr>
-        <tr>
-          <th>服装</th>
-          <td><input type="text" name="clothes" value="{{old('clothes')}}"></td>
-        </tr>
-        <tr>
-          <th>仕事の特徴</th>
-          <td><input type="text" name="feature" value="{{old('feature')}}"></td>
+          <th class="th_info">■PASS</th>
+          <td class="td_info">
+          {{ $inputs['pass'] }}
+          <input name="pass" class="form_items_input" value="{{$inputs['pass'] }}"type="hidden">
+          </td>
         </tr>
       </table>
-      <input type="submit" class="btn_submit" value="完了">
-    </form>
-  </div>
+      <table class="job_info">
+        <tr>
+          <th class="th_info">■希望雇用形態</th>
+          <td class="td_info">
+          {{ $inputs['status'] }}
+          <input name="status" class="form_items_input" value="{{$inputs['status'] }}"type="hidden">
+          </td>
+        </tr>
+        <tr>
+          <th class="th_info">■希望給与</th>
+          <td class="td_info">
+          {{ $inputs['salary_system'] }}
+          {{ $inputs['salary'] }}
+          <input name="salary" class="form_items_input" value="{{$inputs['salary'] }}"type="hidden">
+          </td>
+        </tr>
+        <tr>
+          <th class="th_info">■希望勤務時間</th>
+          <td class="td_info">
+          {{ $inputs['working_times'] }}
+          <input name="working_times" class="form_items_input" value="{{$inputs['working_times'] }}"type="hidden">
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="profile_links">
+      <input type="submit"class="btn_submit" value="入力内容修正">
+      <input type="submit"class="btn_submit" value="完了">
+    </div>
+  </form>
 </div>
   @endsection

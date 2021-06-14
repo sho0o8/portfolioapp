@@ -28,12 +28,14 @@ class JobseekerController extends Controller
             'name' => 'required',
             'furigana' => 'required',
             'birthday' => 'required',
-            'job' => 'required',
+            'now_job' => 'required',
             'tell' => 'required | numeric | digits_between:8,11',
             'mail' => 'required|email',
             'terms' => 'required',
         ]);
+        // フォームから受け取った全てのinputの情報を取得
         $inputs = $request->all();
+        // 入力内容確認ページに変数inputsを渡して表示
         return view('job_seeker.confirm',['inputs' => $inputs,]);
     }
     // 応募完了画面
@@ -45,7 +47,9 @@ class JobseekerController extends Controller
     public function job_profile(){
         return view('job_seeker.profile');
     }
-    public function job_change(){
-        return view('job_seeker.change');
+    public function job_change(Request $request)
+    {
+        $inputs = $request->all();
+        return view('job_seeker.change',['inputs' => $inputs,]);
     }
 }

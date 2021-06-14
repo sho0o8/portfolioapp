@@ -11,6 +11,7 @@
         <p class="apply_form_items_label"><span class="apply_form_items_required">必須</span>氏名</p>
         <input type="text" class="apply_form_items_input" name="name" placeholder="山田太郎" value="{{old('name')}}">
         <br>
+        <!-- エラーメッセージ出力 -->
         @if($errors->has('name'))
         <p class="error-message">{{$errors->first('name')}}</p>
         @endif
@@ -33,7 +34,11 @@
       </div>
       <div class="apply_form">
         <p class="apply_form_items_label"><span class="apply_form_items_required">必須</span>現在の職業</p>
-        <input type="text" class="apply_form_items_input" name="job" value="{{old('job')}}">
+        <select class="apply_form_items_input" name="now_job">
+          @foreach (config('const.now_job') as $key => $value)
+          <option value="{{ $key }}">{{ $value }}</option>
+          @endforeach
+        </select>
         <br>
         @if($errors->has('job'))
         <p class="error-message">{{$errors->first('job')}}</p>
@@ -57,11 +62,10 @@
       </div>
   <!-- 利用規約 -->
       <div class="apply_form_terms">
-        <a href="#login_terms">利用規約・個人情報の取り扱いについて</a>
-        <input type="checkbox" name="terms">
+        <a href="#" class="login_terms">利用規約・個人情報の取り扱いについて
+          <input type="checkbox" name="terms">
         <!-- ポップアップ -->
-        <div class="modal_wrapper" id="login_terms">
-          <a href="#!" class="modal_overlay"></a>
+        <div class="popup">
           <div class="modal_window">
             <div class="terms_content">
               <h4>■利用規約・個人情報の取り扱いについて</h4>
@@ -70,7 +74,6 @@
             <a href="#" class="modal_close">✖️</a>
           </div>
         </div>
-      </div>
         @if($errors->has('terms'))
         <p class="error-message">{{$errors->first('terms')}}</p>
         @endif
@@ -81,4 +84,14 @@
       </form>
     </div>
   </div>
+  <!-- jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$('.login_terms').on('click',function(){
+    $('.popup').addClass('show').fadeIn();
+});
+$('.modal_close').on('click',function(){
+    $('.popup').fadeOut();
+});
+</script>
 @endsection

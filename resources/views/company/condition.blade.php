@@ -12,7 +12,7 @@
     <div class="company_condition_section">
       @csrf
         <div class="company_info_form">
-          <table class="company_info">
+          <table class="profile_info">
             <tr>
               <th class="th_info">■企業名</th>
               <td class="td_info"><input type="text" name="name" value="{{old('company')}}"></td>

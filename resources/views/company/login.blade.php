@@ -20,21 +20,22 @@
         <input type="submit" class="btn_submit" value="ログイン">
       </div>
     </form>
+  </div>
   <!-- ログイン出来ない -->
-      <a href="#company_not_login_modal" class="company_not_login">ログインができない方はこちら</a>
-  <!-- ポップアップ -->
-    <div class="modal_wrapper" id="company_not_login_modal">
-      <a href="#!" class="modal_overlay"></a>
+  <div class="not_login">
+      <a href="#" class="company_not_login">ログインができない方はこちら</a>
+      <!-- ポップアップ -->
+    <div class="not_login_popup">
       <div class="modal_window">
         <div class="company_not_login_content">
-          <h4>ログイン出来ない方</h4>
+          <h4>ログイン出来ない方はこちら</h4>
           <form method="post" action="/login/company_mypage">
           @csrf
             <div class="company_login_form">
               <p class="company_login_items_label">登録E-mail：</p>
               <input type="email" class="company_login_items_input" name="user">
             </div>
-              <input type="submit" class="btn_submit" name="send" value="送信">
+            <input type="submit" class="btn_submit" name="send" value="送信">
           </form>
         </div>
         <a href="#" class="modal_close">✖️</a>
@@ -43,10 +44,9 @@
   </div>
   <!-- 新規登録フォーム -->
   <div class="company_register">
-    <a href="#company_register_modal" class="company_register_title" >新規登録の方はこちら</a>
+    <a href="#" class="company_register_title" >新規登録の方はこちら</a>
   <!-- ポップアップ -->
-    <div class="modal_wrapper" id="company_register_modal">
-      <a href="#!" class="modal_overlay"></a>
+    <div class="register_popup">
       <div class="modal_window">
         <div class="company_register_content">
           <h4>新規登録フォーム</h4>
@@ -78,4 +78,22 @@
     </div>
   </div>
 </div>
+<!-- jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>
+$('.company_not_login').on('click',function(){
+    $('.not_login_popup').addClass('show').fadeIn();
+});
+$('.modal_close').on('click',function(){
+    $('.not_login_popup').fadeOut();
+});
+</script>
+<script>
+$('.company_register_title').on('click',function(){
+    $('.register_popup').addClass('show').fadeIn();
+});
+$('.modal_close').on('click',function(){
+    $('.register_popup').fadeOut();
+});
+</script>
 @endsection

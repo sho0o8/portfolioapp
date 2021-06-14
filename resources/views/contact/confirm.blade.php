@@ -7,7 +7,7 @@
   <form method='post' action="/contact/confirm/send">
   @csrf
     <div class="contact_form">
-      <p class="form_items_label">■名前</p>
+      <p class="form_items_label">■氏名</p>
       {{ $inputs['name'] }}
       <input name="name" class="form_items_input" value="{{$inputs['name'] }}"type="hidden">
     </div>
@@ -22,7 +22,7 @@
       <input name="body" class="form_items_textarea" value="{{$inputs['body'] }}"type="hidden">
     </div>
     <div class="contact_btn">
-      <input type="submit"class="btn_submit" value="入力容修正">
+      <input class="btn_submit" onclick="history.back()" value="入力内容修正">
       <input type="submit"class="btn_submit" value="送信">
     </div>
   </form>

@@ -6,6 +6,7 @@ body {
   color: #636b6f;
   font-family: 'Nunito', sans-serif;
   font-weight: 700;
+  height: 100vh;
   margin: 0;
   padding: 0;
   position: relative;
@@ -53,64 +54,19 @@ ul{
 /* トップページ */
 /* コンテンツ */
 /* ポップアップ */
-.modal_wrapper{
-  z-index: 999;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 40px 10px;
-}
-.modal_wrapper:not(:target){
-  opacity:0;
-  visibility:hidden;
-}
-.modal_wrapper:target{
-  opacity: 1;
-  visibility:visible;
-  transition: opacity .4s, visibility .4s;
-}
-.modal_wrapper::after{
-  display: inline-block;
-  height: 100%;
-  margin-left: -.05em;
-  vertical-align: middle;
-}
-.modal_wrapper .modal_window{
-  box-sizing: border-box;
-  display: inline-block;
-  z-index: 20;
-  position: relative;
-  width: 70%;
-  max-width: 600px;
-  padding: 30px 30px 30px;
-  border-radius: 10px;
+.modal_window{
+  border-radius: 6px;
   background: #dfe4ee;
-  box-shadow: 0 0 30px rgba(0,0,0,.6);
-  vertical-align: middle;
+  padding: 30px;
+  width: 50%;
+  position: relative;
+  max-width: 600px;
 }
-.modal_wrapper .modal_window .login_content {
-  max-height: 80vh;
-  overflow-y: auto;
-  text-align: center;
-}
-.modal_overlay{
-  z-index: 10;
+
+.modal_close{
   position: absolute;
   top: 0;
   right: 0;
-  bottom: 0;
-  left: 0;
-  background: rgba(0,0,0,..8);
-}
-.modal_wrapper .modal_close{
-  z-index: 20;
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 35px;
-  color: #95979c !important;
   font-size: 20px;
   font-weight: 700;
   line-height: 35px;
@@ -118,18 +74,7 @@ ul{
   text-decoration: none;
   text-indent: 0;
 }
-.modal_wrapper .modal_close:hover{
-  color:#2b2e38 !important;
-}
-.modal_wrapper h4{
-  font-size: 25px;
-}
-#login_modal{
-  top:25%;
-}
-#register_modal{
-  top:25%;
-}
+
 .modal_form{
   padding: 10px 0;
   width: 100%;
@@ -159,20 +104,15 @@ ul{
   background-color: #58BE32;
   font-weight: bold;
   color: #fff;
-  font-size: 17px;
+  font-size: 15px;
 }
 .btn_submit:active{
   background-color: #277A09;
 }
-a.not_login{
-  text-decoration: underline;
-}
 .login_content .form_items{
   text-align: right;
 }
-.login_content{
-  padding-bottom: 30px;
-}
+
 /* コンテンツレイアウト */
 .top_page_content {
   text-align: center;
@@ -189,7 +129,7 @@ a.not_login{
   padding: 50px 0px;
 }
 
-a.btn_signup, a.btn_login {
+.btn_signup, .btn_login {
   background-color:#f3f4f4;
   padding: 5px 24px;
   color: #f3f4f4;
@@ -202,7 +142,7 @@ a.btn_signup, a.btn_login {
   font-weight: 600;
   letter-spacing: .1rem;
 }
-a.btn_signup:hover, a.btn_login:hover {
+.btn_signup:hover, .btn_login:hover {
   color:#f3f4f4;
   background-color: #636b6f;
 }
@@ -341,8 +281,10 @@ a.btn_signup:hover, a.btn_login:hover {
   font-size: 18px;
 }
 .company_login_items_input{
+  margin-left: 0;
   width: 200px;
   height: 30px;
+  flex: inherit;
   font-size: 15px;
 }
 .company_register_form{
@@ -369,13 +311,7 @@ a.btn_signup:hover, a.btn_login:hover {
 a.company_not_login, a.company_register_title{
   text-decoration: underline;
 }
-.company_register{
-  padding: 20px 0;
-}
 
-#company_not_login_modal,#company_register_modal{
-  top: 25%;
-}
 /* 求人情報追加ページ */
 .company_condition_content{
   width: 75%;
@@ -398,8 +334,6 @@ a.company_not_login, a.company_register_title{
   margin-top: 40px;
   text-align: center;
 }
-
-
 /* 管理画面 */
 .company_mypage{
   width: 100%;
@@ -440,58 +374,118 @@ a.company_not_login, a.company_register_title{
   text-align: center;
 }
 /* 求職者側ページ */
-.job_content{
-  width: 40%;
-  margin: 180px auto;
-  height: 800px;
-  font-weight: bold;
-  background: #FFF;
+.main_content{
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 150px;
+}
+.search_content{
   border: solid 3px #636b6f;
-  border-radius: 10px
+  border-radius: 6px;
+  margin-bottom: 5px;
+}
+.search_form{
+  width:100%;
+  display: flex;
+  align-items: center;
+}
+.search_form_label{
+  width: 90px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  font-size: 15px;
+  font-weight: bold;
+  color: #fff;
+  background: #636b6f;
+  border-radius: 3px;
+  margin-left: 20px;
+  margin-right: 70px;
+}
+.search_btn{
+  text-align: center;
+}
+.btn_search{
+  margin: 10px;
+  width: 100px;
+  height: 30px;
+  padding: 5px,10px;
+  border-radius: 5px;
+  border: 2px solid #58BE32;
+  background-color: #fff;
+  font-weight: bold;
+  color: #58BE32;
+  font-size: 15px;
+}
+.btn_search:active{
+  background-color: #d7dfd4;
+}
+.job_content{
+  border: solid 3px #636b6f;
+  border-radius: 6px;
+  padding-bottom: 10px;
 }
 .job_gallery{
-  padding: 50px 0 70px 0;
+  padding: 20px 0 20px 0;
   text-align: center;
 }
-
 .job_gallery img{
-  max-width: 600px;
+  max-width: 450px;
 }
 .job_preview{
+  width:100%;
+  display: flex;
+  align-items: center;
+}
+.job_preview_label{
+  width: 90px;
   text-align: center;
-}
-.tr_02{
-  font-size: 20px;
-}
-.table_02{
-  width: 400px;
-  text-align: center;
-}
-.th_02{
-  text-align: left;
+  letter-spacing: 0.05em;
+  font-size: 15px;
+  font-weight: bold;
+  color: #fff;
+  background: #636b6f;
+  border-radius: 3px;
+  margin-left: 20px;
+  margin-right: 70px;
 }
 .job_links{
-  margin-top: 30px;
   text-align: center;
-  font-size: 32px;
 }
 .btn_job_links{
   width: 70px;
   padding: 5px 10px;
+  border: 1px solid #636b6f;
   border-radius: 5px;
   background-color:  #58BE32;
   font-weight: bold;
   color: #fff;
-  font-size: 17px;
+  font-size: 16px;
 }
-
-.btn_job_links:active{
+.btn_job_links:active,.btn_job_links:hover{
   background-color: #277A09;
 }
 /* ポップアップ */
-#detail_modal{
-  top: 25%;
+.not_login_popup,.login_popup, .register_popup, .popup{
+  display: none;
+  height: 100vh;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
 }
+.show{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.job_detail_content{
+  border-radius: 6px;
+  background: #dfe4ee;
+  padding: 30px;
+  width: 50%;
+}
+
 /* ログアウト */
 .logout_content{
   padding: 200px 0;
@@ -516,7 +510,7 @@ a.company_not_login, a.company_register_title{
   display: flex;
   align-items: center;
 }
-.apply_form:nth-child(6){
+.apply_form:nth-child(7){
   border-bottom:1px solid #ddd;
 }
 .apply_form_items_label{
@@ -525,10 +519,6 @@ a.company_not_login, a.company_register_title{
   letter-spacing: 0.05em;
   font-weight: bold;
   font-size: 18px;
-}
-.apply_form_items_label .ismsg{
-  margin-top: 8px;
-  margin-bottom: auto;
 }
 .apply_form_items_required{
   border-radius: 6px;
@@ -554,16 +544,12 @@ a.company_not_login, a.company_register_title{
 .apply_form_btn{
   text-align: center;
 }
-.apply_form_terms a{
-  text-decoration: underline;
-}
 .btn_send{
   width: 150px;
 }
+
 /* ポップアップ */
-#login_terms{
-  top: 25%;
-}
+
 
 /* 応募完了画面 */
 .thanks_content{
@@ -587,23 +573,21 @@ a.company_not_login, a.company_register_title{
   justify-content: center;
   text-align: center;
 }
-
+.profile_info,.job_info{
+  font-size: 16px;
+}
 .profile_links{
   text-align: center;
   font-size: 20px;
+  margin-top: 30px;
 }
 .th_info{
   text-align: left;
+  padding-right: 50px;
 }
 /* プロフィール変更画面 */
-.profile_change{
-  width: 100%;
-  padding: 200px 0;
-  text-align: center;
-}
-.personal_change{
-  margin-bottom: 20px;
-}
+
+
 /* フッター */
 footer {
   position: absolute;
