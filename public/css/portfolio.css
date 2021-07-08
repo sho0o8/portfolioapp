@@ -6,7 +6,6 @@ body {
   color: #636b6f;
   font-family: 'Nunito', sans-serif;
   font-weight: 700;
-  height: 100vh;
   margin: 0;
   padding: 0;
   position: relative;
@@ -66,7 +65,7 @@ ul{
 .modal_close{
   position: absolute;
   top: 0;
-  right: 0;
+  right: 10;
   font-size: 20px;
   font-weight: 700;
   line-height: 35px;
@@ -369,20 +368,22 @@ a.company_not_login, a.company_register_title{
 /* 求人変更画面 */
 .job_change{
   width: 100%;
-  height: 1200px;
-  padding-top: 150px;
+  margin-top: 120px;
+  padding-bottom: 150px;
   text-align: center;
 }
 /* 求職者側ページ */
 .main_content{
   width: 50%;
   margin: 0 auto;
-  margin-top: 150px;
+  margin-top: 120px;
+  padding-bottom: 150px;
 }
 .search_content{
   border: solid 3px #636b6f;
   border-radius: 6px;
   margin-bottom: 5px;
+  min-width: 700px;
 }
 .search_form{
   width:100%;
@@ -423,6 +424,7 @@ a.company_not_login, a.company_register_title{
   border: solid 3px #636b6f;
   border-radius: 6px;
   padding-bottom: 10px;
+  min-width: 700px;
 }
 .job_gallery{
   padding: 20px 0 20px 0;
@@ -499,6 +501,7 @@ a.company_not_login, a.company_register_title{
   margin: 0 auto;
   max-width: 720px;
   padding-top:150px ;
+  padding-bottom: 150px;
 }
 .apply_content h1{
   text-align: center;
@@ -547,10 +550,6 @@ a.company_not_login, a.company_register_title{
 .btn_send{
   width: 150px;
 }
-
-/* ポップアップ */
-
-
 /* 応募完了画面 */
 .thanks_content{
   padding: 200px 0;

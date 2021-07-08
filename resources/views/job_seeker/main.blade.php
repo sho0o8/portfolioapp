@@ -1,10 +1,10 @@
-@extends('layout.job')
+@extends('layouts.job')
 
 @section('title','main')
 
 @section('content')
 <div class="main_content">
-  <div class="search_content">
+  <!-- <div class="search_content">
     <form method="post" action="#">
       @csrf
       <div class="search_form">
@@ -44,34 +44,35 @@
             <input type="submit" class="btn_search" value="絞り込み">
       </div>
     </form>
-  </div>
+  </div> -->
   <div class="job_content">
     <div class="job_gallery">
       <img src="{{ asset('images/img5.jpg')}}" alt="">
     </div>
     <div class="job_preview">
       <p class="job_preview_label">求人件名</p>
-      <p>○○○○○○○○○○○○○○○</p>
+      <p>{{$item->title}}</p>
     </div>
     <div class="job_preview">
       <p class="job_preview_label">企業名</p>
-      <p>○○○○○○○○○○○○○○○</p>
+      <p>{{$item->name}}</p>
     </div>
     <div class="job_preview">
       <p class="job_preview_label">職種</p>
-      <p>○○○○○○○○○○○○○○○</p>
+      <p>{{config('const.job_type.'.$item->job_type)}}</p>
     </div>
     <div class="job_preview">
       <p class="job_preview_label">雇用形態</p>
-      <p>○○○○○○○○○○○○○○○</p>
+      <p>{{config('const.working_status.'.$item->salary_form)}}</p>
     </div>
     <div class="job_preview">
       <p class="job_preview_label">勤務地</p>
-      <p>○○○○○○○○○○○○○○○</p>
+      <p>{{$item->address}}</p>
     </div>
     <div class="job_preview">
       <p class="job_preview_label">給与</p>
-      <p>○○○○○○○○○○○○○○○</p>
+      <p>{{config('const.salary_form.'.$item->salary_form)}}
+        {{$item->salary}}<span>円</span></p>
     </div>
     <div class="job_links">
       <a href="" class="btn_job_links">興味あり</a>
@@ -82,31 +83,32 @@
       <div class="popup">
         <div class="job_detail_content">
           <div class="job_detail_title">
-            <h1>求人タイトル</h1>
+            <h1>{{$item->title}}</h1>
           </div>
           <div class="job_preview">
             <p class="job_preview_label">職種</p>
-            <p>○○○○○○○○○○○○○○○</p>
+            <p>{{config('const.job_type.'.$item->job_type)}}</p>
           </div>
           <div class="job_preview">
             <p class="job_preview_label">雇用形態</p>
-            <p>○○○○○○○○○○○○○○○</p>
+            <p>{{config('const.working_status.'.$item->salary_form)}}</p>
           </div>
           <div class="job_preview">
             <p class="job_preview_label">給与</p>
-            <p>○○○○○○○○○○○○○○○</p>
+            <p>{{config('const.salary_form.'.$item->salary_form)}}
+        {{$item->salary}}<span>円</span></p>
           </div>
           <div class="job_preview">
             <p class="job_preview_label">仕事内容</p>
-            <p>○○○○○○○○○○○○○○○</p>
+            <p>{{$item->offer}}</p>
           </div>
           <div class="job_preview">
             <p class="job_preview_label">勤務地</p>
-            <p>○○○○○○○○○○○○○○○</p>
+            <p>{{$item->address}}</p>
           </div>
           <div class="job_preview">
             <p class="job_preview_label">勤務時間</p>
-            <p>○○○○○○○○○○○○○○○</p>
+            <p>{{$item->work_start_time}} <span>〜</span> {{$item->work_end_time}}</p>
           </div>
           <div class="job_preview">
             <p class="job_preview_label">おすすめの人</p>
@@ -114,7 +116,7 @@
           </div>
           <div class="job_preview">
             <p class="job_preview_label">備考</p>
-            <p>○○○○○○○○○○○○○○○</p>
+            <p>{{$item->other}}</p>
           </div>
           <button class="close">閉じる</button>
         </div>

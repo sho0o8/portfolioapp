@@ -1,4 +1,4 @@
-@extends('layout.job')
+@extends('layouts.job')
 
 @section('title','thanks')
 

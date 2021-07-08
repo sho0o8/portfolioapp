@@ -1,4 +1,4 @@
-@extends('layout.job')
+@extends('layouts.job')
 
 @section('title','logout')
 
@@ -7,9 +7,6 @@
   <div class="logout_title">
     <h1>ログアウト</h1>
   </div>
-  <form method="post" action="/" >
-  @csrf
-    <input type="submit" class="btn_submit" value="TOPページ" >
-  </form>
+  <a href="/" class="btn_submit btn_send">TOPページへ戻る</a>
 </div>
   @endsection

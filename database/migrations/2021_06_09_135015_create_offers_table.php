@@ -26,7 +26,7 @@ class CreateOffersTable extends Migration
             $table->text('offer')->nullable();
             $table->string('treatment')->nullable();
             $table->string('clothes')->nullable();
-            $table->integer('suitable_type')->nullable();
+            $table->string('suitable_type')->nullable();
             $table->text('other')->nullable();
             $table->timestamps();
         });

@@ -12,12 +12,14 @@
   <body>
     <header>
       <div class="header_left">
-        <a href="/"><img src="{{asset('/images/logo_transparent.png')}}" alt="ロゴ"></a>
+        <a href="/company/company_mypage"><img src="{{asset('/images/logo_transparent.png')}}" alt="ロゴ"></a>
       </div>
       <nav class="pc_nav">
         <ul class="pc_nav_ul">
-          <li class="nav_list"><a href="/about">サービスについて</a></li>
-          <li class="nav_list"><a href="/login">企業の方はこちら</a></li>
+          <li class="nav_list"><a href={{ route('company.logout') }} onclick="event.preventDefault();document.getElementById('logout-form').submit();">ログアウト</a>
+          <form id='logout-form' action={{ route('company.logout')}} method="POST" style="display: none;">
+          @csrf
+          </form></li>
           <li class="nav_list"><a href="/contact">お問い合せ</a></li>
         </ul>
       </nav>

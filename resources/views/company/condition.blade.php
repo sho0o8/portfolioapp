@@ -1,4 +1,4 @@
-@extends('layout.company')
+@extends('layouts.company_mypage')
 
 @section('title','condition')
 
@@ -8,57 +8,14 @@
     <h1>企業・求人情報</h1>
   </div>
   <div class="company_condition_all">
-    <form method="post" action="/login/company_mypage">
+    <form method="post" action="/company/job_condition">
     <div class="company_condition_section">
       @csrf
-        <div class="company_info_form">
-          <table class="profile_info">
-            <tr>
-              <th class="th_info">■企業名</th>
-              <td class="td_info"><input type="text" name="name" value="{{old('company')}}"></td>
-            </tr>
-            <tr>
-              <th class="th_info">■都道府県</th>
-              <td class="td_info">
-                <select name="prefectures" value="{{old('prefectures')}}">
-                    @foreach (config('const.preflist') as $key => $value)
-                  <option value="{{ $key }}">{{ $value }}</option>
-                    @endforeach
-                </select>
-              </td>
-            </tr>
-            <tr>
-              <th class="th_info">■勤務地</th>
-              <td class="td_info"><input type="text" name="address" value="{{old('address')}}"></td>
-            </tr>
-            <tr>
-              <th class="th_info">■最寄り駅</th>
-              <td class="td_info"><input type="closest_station" name="mail" value="{{old('closest_station')}}"></td>
-            </tr>
-            <tr>
-              <th class="th_info">■電話番号</th>
-              <td class="td_info"><input type="tel" name="tell" value="{{old('tell')}}"></td>
-            </tr>
-            <tr>
-              <th class="th_info">■メールアドレス</th>
-              <td class="td_info"><input type="email" name="mail" value="{{old('mail')}}"></td>
-            </tr>
-            <tr>
-              <th class="th_info">■PASS</th>
-              <td class="td_info"><input type="password" name="pass" value="{{old('pass')}}"></td>
-            </tr>
-          </table>
-        </div>
         <div class="job_info_form">
           <table class="job_info">
-            <tr>
-              <th class="th_info">■企業写真</th>
-              <td class="td_info"><input type="file" name="job_picture" value="{{old('job_picture')}}"></td>
-            </tr>
-            <tr>
-              <th class="th_info">■職種</th>
+              <th class="th_info">職種</th>
                 <td class="td_info">
-                  <select name="job" value="{{old('job')}}">
+                  <select name="job_type" value="">
                     @foreach (config('const.job_type') as $key => $value)
                     <option value="{{ $key }}">{{ $value }}</option>
                     @endforeach
@@ -66,9 +23,9 @@
               </td>
             </tr>
             <tr>
-              <th class="th_info">■雇用形態</th>
+              <th class="th_info">雇用形態</th>
               <td class="td_info">
-                <select name="status" value="{{old('status')}}">
+                <select name="working_status" value="">
                     @foreach (config('const.working_status') as $key => $value)
                   <option value="{{ $key }}">{{ $value }}</option>
                     @endforeach
@@ -76,64 +33,59 @@
               </td>
             </tr>
             <tr>
-              <th class="th_info">■給与</th>
+              <th class="th_info">給与</th>
               <td class="td_info">
-                <select name="salary_system" value="{{old('salary_system')}}">
+                <select name="salary_form" value="">
                     @foreach (config('const.salary_form') as $key => $value)
                     <option value="{{ $key }}">{{ $value }}</option>
                     @endforeach
                 </select>
-                <input type="text" name="salary" value="{{old('salary')}}">
+                <input type="text" name="salary" value="">
+                <span>円〜</span>
               </td>
             </tr>
             <tr>
-              <th class="th_info">■勤務時間</th>
-              <td class="td_info"><input type="text" name="working_times" value="{{old('working_times')}}"></td>
+              <th class="th_info">勤務開始時間</th>
+              <td class="td_info"><input type="time" name="work_start_time" value=""></td>
             </tr>
             <tr>
-              <th class="th_info">■求人タイトル</th>
-              <td class="td_info"><input type="text" name="job_title" value="{{old('job_title')}}"></td>
+              <th class="th_info">勤務終了時間</th>
+              <td class="td_info"><input type="time" name="work_end_time" value=""></td>
             </tr>
             <tr>
-              <th class="th_info">■求人内容</th>
-              <td><textarea name="job_content" value="{{old('job_content')}}"></textarea></td>
+              <th class="th_info">求人タイトル</th>
+              <td class="td_info"><input type="text" name="title" value=""></td>
+            </tr>
+            <tr>
+              <th class="th_info">求人内容</th>
+              <td class="td_info"><textarea name="offer" value=""></textarea></td>
             </tr>
             <tr>
               <tr>
-                <th class="th_info">■服装</th>
-                <td class="td_info"><input type="text" name="clothes" value="{{old('clothes')}}"></td>
+                <th class="th_info">待遇</th>
+                <td class="td_info"><input type="text" name="treatment" value=""></td>
               </tr>
               <tr>
-                <th class="th_info">■この仕事向いている人</th>
+                <th class="th_info">服装</th>
+                <td class="td_info"><input type="text" name="clothes" value=""></td>
+              </tr>
+              <tr>
+                <th class="th_info">この仕事向いている人</th>
                 <td class="td_info">
-                  <input type="checkbox" name="feature">実力主義<br>
-                  <input type="checkbox" name="feature">お金を稼ぎたい<br>
-                  <input type="checkbox" name="feature">スキル・経験を活かしたい<br>
-                  <input type="checkbox" name="feature">淡々と仕事がしたい<br>
-                  <input type="checkbox" name="feature">工夫を試しながら仕事がしたい<br>
-                  <input type="checkbox" name="feature">チームで仕事をしたい<br>
-                  <input type="checkbox" name="feature">個人で仕事をしたい<br>
-                  <input type="checkbox" name="feature">挑戦・成長意欲が高い<br>
-                  <input type="checkbox" name="feature">安定的に仕事がしたい<br>
-                  <input type="checkbox" name="feature">好奇心・探究心が高い<br>
-                  <input type="checkbox" name="feature">コミュニケーションを取ることが好き<br>
-                  <input type="checkbox" name="feature">考えることが好き<br>
-                  <input type="checkbox" name="feature">人に寄り添いたい<br>
-                  <input type="checkbox" name="feature">プライベートも大切にしたい<br>
-                  <input type="checkbox" name="feature">オンオフのメリハリを大切にしたい<br>
-                  <input type="checkbox" name="feature">ものづくりが好き<br>
+                @foreach (config('const.suitable_type') as $key => $value)
+                  <input type="checkbox" name="suitable_type[]" id="suitable_type{{ $key }}"  value="{{ $key }}">{{ $value }}<br>
+                @endforeach
                 </td>
               </tr>
               <tr>
-                <th class="th_info">■備考</th>
-                <td class="td_info"><textarea name="job_other" value="{{old('job_other')}}"></textarea></td>
+                <th class="th_info">備考</th>
+                <td class="td_info"><textarea name="other" value=""></textarea></td>
               </tr>
           </table>
         </div>
       </div>
       <div class="job_info_btn">
         <input type="submit" class="btn_submit" value="作成">
-        <input type="submit" class="btn_submit" value="後で">
       </div>
     </form>
   </div>

@@ -1,0 +1,7 @@
+入力用の記載
+
+
+結合の記載
+                $item = DB::table('users')
+        ->join('user_details',function($join){$join->on('users.id','=','user_details.user_id')->where('users.id',Auth::id());})
+        ->first();

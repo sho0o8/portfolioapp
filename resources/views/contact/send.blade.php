@@ -1,4 +1,4 @@
-@extends('layout.index')
+@extends('layouts.index')
 
 @section('title','send')
 
@@ -8,9 +8,6 @@
     <h1>お問い合わせいただきありがとうございました。</h1>
     <h3>担当より連絡がありますのでお待ちください。</h3>
   </div>
-  <form method="post" action="/" >
-    @csrf
-    <input type="submit" class="btn_submit btn_send" value="TOPページへ戻る" >
-  </form>
+  <a href="/" class="btn_submit btn_send">TOPページへ戻る</a>
 </div>
   @endsection

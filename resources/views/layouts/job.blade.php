@@ -12,12 +12,15 @@
   <body>
     <header>
       <div class="header_left">
-        <a href="/"><img src="{{asset('/images/logo_transparent.png')}}" alt="ロゴ"></a>
+        <a href="/mypage"><img src="{{asset('/images/logo_transparent.png')}}" alt="ロゴ"></a>
       </div>
       <nav class="pc_nav">
         <ul class="pc_nav_ul">
-          <li class="nav_list"><a href="/mypage/profile">プロフィール</a></li>
-          <li class="nav_list"><a href="/logout">ログアウト</a></li>
+          <li class="nav_list"><a href="/mypage/profile_confirm">プロフィール</a></li>
+          <li class="nav_list"><a href={{ route('logout') }} onclick="event.preventDefault();document.getElementById('logout-form').submit();">ログアウト</a>
+          <form id='logout-form' action={{ route('logout')}} method="POST" style="display: none;">
+          @csrf
+          </form></li>
           <li class="nav_list"><a href="/contact">お問い合わせ</a></li>
         </ul>
       </nav>
