@@ -64,56 +64,6 @@ section {
   display: block;
 }
 
-/* 全体 */
-body {
-  background-color: #fff;
-  color: #636b6f;
-  font-family: 'Nunito', sans-serif;
-  font-weight: 700;
-  margin: 0;
-  padding: 0;
-  position: relative;
-}
-* {
-  box-sizing: border-box;
-}
-/* ヘッダー */
-header{
-  padding: 10px 4% 10px;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 90px;
-  font-weight: 600;
-  background-color:#f3f4f4;
-  display: flex;
-  align-items: center;
-}
-
-.header_left img{
-  width: 110px;
-}
-
-a{
-  text-decoration: none;
-  color: #636b6f;
-}
-
-nav{
-  margin: 0 0 0 auto;
-}
-.pc_nav_ul{
-  display: flex;
-}
-ul{
-  list-style: none;
-  padding: 0;
-}
-.nav_list{
-  margin: 0 0 0 15px;
-  font-size: 14px;
-}
-
 body {
   margin: 0;
   font-family: "Nunito", sans-serif;
